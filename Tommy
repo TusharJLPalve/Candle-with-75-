@@ -1,0 +1,8 @@
+//@version=4
+study("75% Body Highlight")
+
+// Calculate body size as percentage of the entire range
+bodyPct = abs(open - close) / (high - low) * 100
+
+// Highlight bars or candles where body size is greater than 75%
+barcolor(bodyPct >= 75 ? color.green : na)
